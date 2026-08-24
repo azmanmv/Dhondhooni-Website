@@ -1,0 +1,6 @@
+{
+  "name": "Dhondhooni Little Learners Preschool",
+  "description": "Official Web Portal for Dhondhooni Little Learners Preschool (Malé, Maldives).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
