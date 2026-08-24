@@ -114,7 +114,7 @@ export default function Contact() {
                 <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 text-gray-900 font-medium appearance-none">
                   <option>General Inquiry</option>
                   <option>Admissions & Enrollment</option>
-                  <option>Careers</option>
+                  <option>Jobs</option>
                   <option>Feedback</option>
                 </select>
               </div>

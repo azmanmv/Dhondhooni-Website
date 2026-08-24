@@ -13,7 +13,7 @@ export default function Layout() {
     { name: 'Admissions', path: '/admissions', active: 'bg-sky-500 text-white shadow-inner', default: 'bg-sky-100 text-sky-800 hover:bg-sky-500 hover:text-white' },
     { name: 'Campuses', path: '/campuses', active: 'bg-indigo-500 text-white shadow-inner', default: 'bg-indigo-100 text-indigo-700 hover:bg-indigo-500 hover:text-white' },
     { name: 'Media', path: '/social-media', active: 'bg-fuchsia-500 text-white shadow-inner', default: 'bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-500 hover:text-white' },
-    { name: 'Careers', path: '/careers', active: 'bg-pink-500 text-white shadow-inner', default: 'bg-pink-100 text-pink-700 hover:bg-pink-500 hover:text-white' },
+    { name: 'Jobs', path: '/jobs', active: 'bg-pink-500 text-white shadow-inner', default: 'bg-pink-100 text-pink-700 hover:bg-pink-500 hover:text-white' },
     { name: 'Contact', path: '/contact', active: 'bg-teal-500 text-white shadow-inner', default: 'bg-teal-100 text-teal-800 hover:bg-teal-500 hover:text-white' },
   ];
 
@@ -135,7 +135,7 @@ export default function Layout() {
                 <li><Link to="/programs" className="text-primary-200 hover:text-white transition-colors">Academic Programs</Link></li>
                 <li><Link to="/admissions" className="text-primary-200 hover:text-white transition-colors">Admissions & Fees</Link></li>
                 <li><Link to="/campuses" className="text-primary-200 hover:text-white transition-colors">Our Campuses</Link></li>
-                <li><Link to="/careers" className="text-primary-200 hover:text-white transition-colors">Careers</Link></li>
+                <li><Link to="/jobs" className="text-primary-200 hover:text-white transition-colors">Jobs</Link></li>
               </ul>
             </div>
             

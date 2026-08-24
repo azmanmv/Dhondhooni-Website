@@ -20,7 +20,7 @@ export default function App() {
           <Route path="admissions" element={<Admissions />} />
           <Route path="campuses" element={<Campuses />} />
           <Route path="social-media" element={<SocialMedia />} />
-          <Route path="careers" element={<Careers />} />
+          <Route path="jobs" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

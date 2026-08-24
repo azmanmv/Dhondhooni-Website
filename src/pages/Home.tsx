@@ -98,19 +98,9 @@ export default function Home() {
               <div className="lg:w-1/2">
                 <span className="inline-block px-4 py-2 bg-pink-500 text-white font-bold rounded-full text-sm mb-4 transform -rotate-2">NEW ADVENTURE</span>
                 <h2 className="text-4xl lg:text-5xl font-black mb-6 text-white leading-tight">Expanding to <br/>Hulhumalé</h2>
-                <p className="text-primary-100 text-xl mb-8 max-w-xl font-medium">
-                  We are thrilled to announce our upcoming Phase 2 Campus opening in January 2027. State-of-the-art facilities designed for modern early education.
+                <p className="text-primary-100 text-xl mb-10 max-w-xl font-medium leading-relaxed">
+                  We are excited to share that our Campus at Hulhumalé Phase 2 will open in January 2027, offering a thoughtfully designed environment for early learning.
                 </p>
-                <ul className="space-y-4 mb-10">
-                  {['Spacious outdoor play areas', 'Purpose-built sensory rooms', 'Expanded capacity for all tiers'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-white text-lg font-bold bg-primary-800/50 p-3 rounded-2xl">
-                      <div className="bg-amber-400 rounded-full p-1 shrink-0">
-                        <CheckCircle2 className="w-5 h-5 text-primary-900" />
-                      </div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
                 <Link to="/campuses" className="inline-flex items-center justify-center px-8 py-4 bg-amber-400 text-primary-900 rounded-full font-black text-lg hover:bg-amber-300 hover:scale-105 transition-all shadow-lg">
                   Learn More
                 </Link>
@@ -118,7 +108,7 @@ export default function Home() {
               <div className="lg:w-1/2 w-full">
                 <div className="aspect-[4/3] bg-primary-800 rounded-[2rem] border-8 border-primary-800 overflow-hidden shadow-2xl relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
                    <img 
-                    src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80" 
+                    src="/newadventure1.jpg" 
                     alt="School Campus rendering" 
                     className="w-full h-full object-cover opacity-90"
                    />
