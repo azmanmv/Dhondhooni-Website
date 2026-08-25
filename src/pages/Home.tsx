@@ -113,9 +113,6 @@ export default function Home() {
                     className="w-full h-full object-cover opacity-90"
                    />
                    <div className="absolute inset-0 bg-primary-900/10"></div>
-                   <div className="absolute bottom-6 left-6 bg-white text-primary-900 px-6 py-3 rounded-2xl font-black text-lg shadow-xl flex items-center gap-2">
-                     <Star className="w-5 h-5 text-amber-500 fill-amber-500" /> Concept Rendering - 2027
-                   </div>
                 </div>
               </div>
             </div>

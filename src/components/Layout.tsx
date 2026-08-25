@@ -162,7 +162,6 @@ export default function Layout() {
           
           <div className="border-t border-primary-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-400">
             <p>&copy; {new Date().getFullYear()} Dhondhooni Little Learners Preschool. All rights reserved.</p>
-            <p className="mt-2 md:mt-0">Designed for Early Childhood Excellence</p>
           </div>
         </div>
       </footer>

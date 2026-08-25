@@ -76,15 +76,11 @@ export default function SocialMedia() {
               </div>
               
               <div className="bg-gray-50 rounded-2xl overflow-hidden mb-6 aspect-video">
-                {/* 
-                  NOTE: YouTube doesn't allow embedding a whole channel dynamically without an API.
-                  You can replace the "src" below with the embed link of your latest specific video!
-                */}
                 <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/1GDFa-nEzcg" 
-                  title="YouTube video player" 
+                  src="https://www.youtube.com/embed/D0c66qqcLpI" 
+                  title="Dhondhooni Preschool YouTube Video" 
                   style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
@@ -92,7 +88,7 @@ export default function SocialMedia() {
               </div>
               
               <a href="https://www.youtube.com/@DhondhooniPreschool" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-all shadow-md gap-2">
-                <Youtube className="w-5 h-5" /> Visit our Channel
+                <Youtube className="w-5 h-5" /> Visit our YouTube Channel
               </a>
             </div>
 
@@ -111,23 +107,36 @@ export default function SocialMedia() {
                 </div>
               </div>
               
-              <div className="bg-gray-50 rounded-2xl flex justify-center overflow-hidden mb-6 p-4">
-                {/* 
-                  NOTE: Instagram requires a specific Post ID to embed. 
-                  Replace the URL below with the embed link of your latest Instagram post. 
-                */}
-                <iframe 
-                  src="https://www.instagram.com/p/fA9uwTtkSN/embed" 
-                  width="100%" 
-                  height="400" 
-                  style={{ maxWidth: '400px', background: 'white', borderRadius: '8px', border: '1px solid #dbdbdb' }} 
-                  scrolling="no" 
-                  allowtransparency="true"
-                ></iframe>
+              <div className="bg-white rounded-2xl p-6 border border-pink-100 mb-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-pink-500 to-purple-600 p-0.5">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <Instagram className="w-5 h-5 text-pink-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">Dhondhooni Little Learners</p>
+                    <p className="text-xs text-gray-500">Official Instagram Feed</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  Explore our latest reels, student events, cultural days, classroom explorations, and stories directly on our Instagram feed.
+                </p>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="aspect-square bg-pink-100/70 rounded-lg flex items-center justify-center text-pink-400 text-xs font-semibold text-center p-1">
+                    Stories & Reels
+                  </div>
+                  <div className="aspect-square bg-purple-100/70 rounded-lg flex items-center justify-center text-purple-500 text-xs font-semibold text-center p-1">
+                    Events & Activities
+                  </div>
+                  <div className="aspect-square bg-amber-100/70 rounded-lg flex items-center justify-center text-amber-600 text-xs font-semibold text-center p-1">
+                    Classroom Moments
+                  </div>
+                </div>
               </div>
               
               <a href="https://www.instagram.com/dhondhoonipreschool" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:opacity-90 text-white rounded-xl font-bold transition-all shadow-md gap-2">
-                <Instagram className="w-5 h-5" /> View on Instagram
+                <Instagram className="w-5 h-5" /> View Latest Posts on Instagram
               </a>
             </div>
           </div>

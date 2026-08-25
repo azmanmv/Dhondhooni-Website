@@ -1,4 +1,5 @@
-import { MapPin, Clock, Phone, Mail, Building2, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, Building2, ExternalLink } from 'lucide-react';
+import hulhumaleCampusImg from '../assets/images/hulhumale_campus_1787676996132.jpg';
 
 export default function Campuses() {
   return (
@@ -15,11 +16,14 @@ export default function Campuses() {
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {/* Malé Campus */}
           <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col">
-            <div className="h-64 relative">
+            <div className="h-64 relative bg-gray-100">
               <img 
-                src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80" 
+                src="/bc_outside.jpg" 
                 alt="Malé Campus" 
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80";
+                }}
               />
               <div className="absolute top-4 left-4 bg-primary-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
                 Main Campus
@@ -44,8 +48,12 @@ export default function Campuses() {
                     <Clock className="w-5 h-5 text-primary-600" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Operating Hours</h4>
-                    <p className="text-gray-600">Sunday - Thursday: 7:30 AM - 2:00 PM<br />Closed on weekends and public holidays</p>
+                    <h4 className="font-bold text-gray-900">Operating & Office Hours</h4>
+                    <p className="text-gray-600">
+                      <span className="font-semibold text-gray-800">School Hours:</span> Sunday – Thursday: 6:55 AM – 6:00 PM<br />
+                      <span className="font-semibold text-gray-800">Admin Office:</span> Sunday – Thursday: 8:00 AM – 4:00 PM<br />
+                      <span className="text-sm text-gray-500">Closed on weekends and public holidays</span>
+                    </p>
                   </div>
                 </div>
 
@@ -55,7 +63,9 @@ export default function Campuses() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">Contact</h4>
-                    <p className="text-gray-600">+960 796-0669</p>
+                    <a href="tel:+9607960669" className="text-primary-600 hover:text-primary-700 font-semibold">
+                      +960 796-0669
+                    </a>
                   </div>
                 </div>
               </div>
@@ -82,45 +92,68 @@ export default function Campuses() {
               <Building2 className="w-64 h-64" />
             </div>
             
-            <div className="h-64 relative">
+            <div className="h-64 relative bg-primary-950">
               <img 
-                src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?auto=format&fit=crop&q=80" 
-                alt="Hulhumalé Campus Rendering" 
-                className="w-full h-full object-cover opacity-80"
+                src={hulhumaleCampusImg} 
+                alt="Hulhumalé Phase 2 Campus Concept" 
+                className="w-full h-full object-cover"
               />
-              <div className="absolute top-4 left-4 bg-amber-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
+              <div className="absolute top-4 left-4 bg-amber-500 text-primary-950 px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
                 Opening Jan 2027
               </div>
             </div>
             
-            <div className="p-8 flex-grow relative z-10">
-              <h2 className="text-2xl font-bold text-white mb-4">Hulhumalé Phase 2 Campus</h2>
-              <p className="text-primary-100 mb-8 leading-relaxed">
-                Currently under construction, our new state-of-the-art facility in Phase 2 will offer expansive indoor and outdoor learning environments, specifically designed for next-generation early education.
-              </p>
+            <div className="p-8 flex-grow relative z-10 flex flex-col justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-4">Hulhumalé Phase 2 Campus</h2>
+                <p className="text-primary-100 mb-6 leading-relaxed">
+                  We are excited to share that our Campus at Hulhumalé Phase 2 will open in January 2027, offering a thoughtfully designed environment for early learning.
+                </p>
 
-              <div className="bg-primary-800/50 rounded-2xl p-6 border border-primary-700 mb-8 backdrop-blur-sm">
-                <h4 className="font-bold text-primary-50 mb-3">Planned Facilities:</h4>
-                <ul className="space-y-2 text-primary-100/90 text-sm">
-                  <li className="flex items-center gap-2">• Interactive Sensory Gardens</li>
-                  <li className="flex items-center gap-2">• Indoor Climate-Controlled Gym</li>
-                  <li className="flex items-center gap-2">• Early Years Science Lab</li>
-                  <li className="flex items-center gap-2">• Drop-off / Pick-up Driveway</li>
-                </ul>
+                {/* Waitlist Notice Box */}
+                <div className="bg-primary-800/70 rounded-2xl p-6 border border-primary-700/80 mb-6 backdrop-blur-sm">
+                  <h4 className="font-bold text-amber-300 text-lg mb-2 flex items-center gap-2">
+                    <Phone className="w-5 h-5" /> Join the Waitlist
+                  </h4>
+                  <p className="text-primary-100 text-base mb-4 leading-relaxed">
+                    If you are interested in enrolling your child, please contact <strong className="text-white font-bold underline decoration-amber-400 decoration-2">7960669</strong> to get waitlisted.
+                  </p>
+                  <a 
+                    href="tel:7960669" 
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-primary-900 font-bold rounded-xl transition-all shadow-md"
+                  >
+                    <Phone className="w-4 h-4" /> Call 796-0669
+                  </a>
+                </div>
               </div>
 
+              {/* Location Google Maps */}
               <div>
-                <h4 className="font-bold text-primary-50 mb-4">Register Interest</h4>
-                <form className="flex gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    className="flex-grow bg-primary-800/50 border border-primary-700 rounded-xl px-4 py-3 text-white placeholder-primary-300/50 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                  />
-                  <button type="button" className="bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold px-6 py-3 rounded-xl transition-colors shrink-0">
-                    Notify Me
-                  </button>
-                </form>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-bold text-primary-200 flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-amber-400" /> Hulhumalé Phase 2 Location
+                  </span>
+                  <a 
+                    href="https://maps.app.goo.gl/VJtqfzJhsyNzzgySA" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-xs text-amber-300 hover:text-white flex items-center gap-1 font-semibold transition-colors underline underline-offset-2"
+                  >
+                    Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+                <div className="bg-primary-950 rounded-2xl h-48 w-full border border-primary-700 overflow-hidden relative shadow-inner">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=4.225,73.548&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Dhondhooni Hulhumale Phase 2 Campus Map"
+                  ></iframe>
+                </div>
               </div>
 
             </div>
