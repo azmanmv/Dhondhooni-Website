@@ -18,11 +18,15 @@ export default function Campuses() {
           <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col">
             <div className="h-64 relative bg-gray-100">
               <img 
-                src="/bc_outside.jpg" 
+                src="/bc_inner.jpg" 
                 alt="Malé Campus" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80";
+                  if (e.currentTarget.src.includes('bc_inner.jpg')) {
+                    e.currentTarget.src = "/bc_inner1.jpg";
+                  } else {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80";
+                  }
                 }}
               />
               <div className="absolute top-4 left-4 bg-primary-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
@@ -94,9 +98,12 @@ export default function Campuses() {
             
             <div className="h-64 relative bg-primary-950">
               <img 
-                src={hulhumaleCampusImg} 
+                src="/hulhumale1.jpg" 
                 alt="Hulhumalé Phase 2 Campus Concept" 
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = hulhumaleCampusImg;
+                }}
               />
               <div className="absolute top-4 left-4 bg-amber-500 text-primary-950 px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
                 Opening Jan 2027
