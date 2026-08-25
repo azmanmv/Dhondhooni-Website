@@ -32,7 +32,7 @@ export default function Layout() {
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center gap-3">
                 <img 
-                  src="/logohead2%20color.png" 
+                  src="./logohead2%20color.png" 
                   alt="Dhondhooni Little Learners Preschool" 
                   className="h-12 sm:h-14 w-auto object-contain"
                 />

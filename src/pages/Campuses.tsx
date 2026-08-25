@@ -18,12 +18,12 @@ export default function Campuses() {
           <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col">
             <div className="h-64 relative bg-gray-100">
               <img 
-                src="/bc_inner.jpg" 
+                src="./bc_inner.jpg" 
                 alt="Malé Campus" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   if (e.currentTarget.src.includes('bc_inner.jpg')) {
-                    e.currentTarget.src = "/bc_inner1.jpg";
+                    e.currentTarget.src = "./bc_inner1.jpg";
                   } else {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80";
                   }
@@ -98,7 +98,7 @@ export default function Campuses() {
             
             <div className="h-64 relative bg-primary-950">
               <img 
-                src="/hulhumale1.jpg" 
+                src="./hulhumale1.jpg" 
                 alt="Hulhumalé Phase 2 Campus Concept" 
                 className="w-full h-full object-cover"
                 onError={(e) => {

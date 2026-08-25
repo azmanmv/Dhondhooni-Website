@@ -108,7 +108,7 @@ export default function Home() {
               <div className="lg:w-1/2 w-full">
                 <div className="aspect-[4/3] bg-primary-800 rounded-[2rem] border-8 border-primary-800 overflow-hidden shadow-2xl relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
                    <img 
-                    src="/newadventure1.jpg" 
+                    src="./newadventure1.jpg" 
                     alt="School Campus rendering" 
                     className="w-full h-full object-cover opacity-90"
                    />
