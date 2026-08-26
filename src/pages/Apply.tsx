@@ -15,7 +15,7 @@ export default function Apply() {
       </section>
 
       {/* Applications Section */}
-      <section className="bg-white py-16 border-y border-slate-200 shadow-sm">
+      <section className="bg-purple-50/30 py-16 border-y border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-800">Admissions & Opportunities</h2>
@@ -33,7 +33,7 @@ export default function Apply() {
               <h4 className="text-md font-semibold text-purple-800 mb-2">Bageecha Campus (Malé)</h4>
               <p className="text-sm text-center text-purple-700 mb-6">
                 To enroll your child for the academic year starting January 2027.<br />
-                <span className="font-['Faruma',serif] mt-1 block">ޖަނަވަރީ 2027 ގައި ފެށޭ ތައުލީމީ އަހަރު ސްކޫލަށް ވެއްދުމަށް</span>
+                <span className="font-dhivehi mt-1 block">ޖަނަވަރީ 2027 ގައި ފެށޭ ތައުލީމީ އަހަރު ސްކޫލަށް ވެއްދުމަށް</span>
               </p>
               <a href="https://forms.gle/Q38xy28qFzVLZuQU6" target="_blank" rel="noopener noreferrer" className="block transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full max-w-[280px] mt-auto">
                 <div className="relative bg-[#633F83] rounded-2xl shadow-lg pt-10 pb-5 px-4 flex flex-col items-center">
@@ -41,7 +41,7 @@ export default function Apply() {
                     <div className="text-[10px] font-bold tracking-widest uppercase opacity-90">Academic Year</div>
                     <div className="text-2xl font-extrabold tracking-wider leading-tight">2027</div>
                   </div>
-                  <div className="text-white text-2xl font-['Faruma',serif] mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
+                  <div className="text-white text-2xl font-dhivehi mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
                   <div className="text-white font-bold text-[1.1rem] text-center tracking-wide flex items-center gap-2">School Application <ExternalLink className="w-4 h-4" /></div>
                 </div>
               </a>
@@ -63,7 +63,7 @@ export default function Apply() {
                     <div className="text-[10px] font-bold tracking-widest uppercase opacity-90">Academic Year</div>
                     <div className="text-2xl font-extrabold tracking-wider leading-tight">2027</div>
                   </div>
-                  <div className="text-white text-2xl font-['Faruma',serif] mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
+                  <div className="text-white text-2xl font-dhivehi mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
                   <div className="text-white font-bold text-[1.1rem] text-center tracking-wide">School Application Form</div>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function Apply() {
                     <div className="text-[10px] font-bold tracking-widest uppercase opacity-90">Academic Year</div>
                     <div className="text-2xl font-extrabold tracking-wider leading-tight">2026</div>
                   </div>
-                  <div className="text-white text-2xl font-['Faruma',serif] mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
+                  <div className="text-white text-2xl font-dhivehi mb-1 mt-2 text-center" dir="rtl">ސްކޫލަށް ވަނުމަށް އެދޭ ފޯމު</div>
                   <div className="text-white font-bold text-[1.1rem] text-center tracking-wide">Admissions Closed</div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function Apply() {
               </p>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7CDo-vg8PA8khWt8bhQDNeUJUN0VwHFRO7rLij0-dxtDh-g/viewform" target="_blank" rel="noopener noreferrer" className="block transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full max-w-[280px] mt-auto">
                 <div className="relative bg-[#633F83] rounded-2xl shadow-lg py-6 px-4 flex flex-col items-center border-b-4 border-[#4d2d69]">
-                  <div className="text-white text-3xl font-['Faruma',serif] mb-2 text-center" dir="rtl">ވަޒީފާއަށް އެދޭ ފޯމު</div>
+                  <div className="text-white text-3xl font-dhivehi mb-2 text-center" dir="rtl">ވަޒީފާއަށް އެދޭ ފޯމު</div>
                   <div className="text-white font-bold text-[1.2rem] text-center tracking-wide mt-1 flex items-center gap-2">Job Application <ExternalLink className="w-5 h-5" /></div>
                 </div>
               </a>

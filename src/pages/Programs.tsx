@@ -106,13 +106,13 @@ export default function Programs() {
                   <p className="text-lg opacity-90 mb-8 font-medium leading-relaxed">
                     {program.description}
                   </p>
-                  <div className="bg-white/60 rounded-2xl p-5 backdrop-blur-sm border-2 border-white">
+                  <div className="bg-slate-50/60 rounded-2xl p-5 backdrop-blur-sm border-2 border-white">
                     <p className="text-sm font-black uppercase tracking-wider opacity-70 mb-1">Session Times</p>
                     <p className="font-black text-xl">{program.time}</p>
                   </div>
                 </div>
 
-                <div className="lg:w-2/3 bg-white/90 rounded-[2rem] p-8 md:p-10 shadow-sm border-2 border-white">
+                <div className="lg:w-2/3 bg-slate-50/90 rounded-[2rem] p-8 md:p-10 shadow-sm border-2 border-white">
                   <h3 className="text-2xl font-black text-gray-900 mb-8 flex items-center gap-3">
                     <span className={`w-12 h-12 rounded-2xl flex items-center justify-center ${program.iconColor}`}>
                       <CheckCircle2 className="w-7 h-7" />
@@ -121,7 +121,7 @@ export default function Programs() {
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-5">
                     {program.milestones.map((milestone, idx) => (
-                      <div key={idx} className="flex gap-4 items-start p-5 rounded-2xl bg-white border-2 border-gray-100 shadow-sm hover:border-current transition-colors">
+                      <div key={idx} className="flex gap-4 items-start p-5 rounded-2xl bg-slate-50 border-2 border-gray-100 shadow-sm hover:border-current transition-colors">
                         <div className={`mt-1 w-3 h-3 rounded-full ${program.iconColor.split(' ')[0]} shrink-0`} />
                         <span className="text-gray-800 font-bold leading-snug">{milestone}</span>
                       </div>

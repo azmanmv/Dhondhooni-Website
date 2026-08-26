@@ -20,7 +20,7 @@ export default function About() {
         
         {/* Vision & Mission */}
         <section className="grid md:grid-cols-2 gap-12 items-stretch">
-          <div className="bg-white rounded-[3rem] p-10 border-4 border-amber-100 shadow-xl relative transform hover:-translate-y-2 transition-all">
+          <div className="bg-amber-50 rounded-[3rem] p-10 border-4 border-amber-100 shadow-xl relative transform hover:-translate-y-2 transition-all">
             <Sparkles className="absolute top-6 right-6 w-12 h-12 text-amber-300 opacity-50" />
             <div className="w-16 h-16 bg-amber-400 rounded-full flex items-center justify-center mb-6 shadow-md">
               <Book className="w-8 h-8 text-white" />
@@ -31,7 +31,7 @@ export default function About() {
             </p>
           </div>
           
-          <div className="bg-white rounded-[3rem] p-10 border-4 border-sky-100 shadow-xl relative transform hover:-translate-y-2 transition-all">
+          <div className="bg-sky-50 rounded-[3rem] p-10 border-4 border-sky-100 shadow-xl relative transform hover:-translate-y-2 transition-all">
             <Heart className="absolute top-6 right-6 w-12 h-12 text-sky-300 opacity-50" />
             <div className="w-16 h-16 bg-sky-400 rounded-full flex items-center justify-center mb-6 shadow-md">
               <Star className="w-8 h-8 text-white fill-white" />
@@ -66,7 +66,7 @@ export default function About() {
         {/* Details Grid (Curriculum, SEN, Safety) */}
         <section className="space-y-16">
           
-          <div className="bg-white rounded-[3rem] p-10 lg:p-16 border-4 border-primary-100 shadow-xl flex flex-col lg:flex-row gap-12 items-center">
+          <div className="bg-primary-50 rounded-[3rem] p-10 lg:p-16 border-4 border-primary-100 shadow-xl flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mb-6 shadow-md">
                 <Book className="w-8 h-8 text-white" />
@@ -88,11 +88,11 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80" alt="Learning" className="rounded-[2rem] border-8 border-primary-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./cur1.jpg" alt="Learning" className="rounded-[2rem] border-8 border-primary-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
             </div>
           </div>
 
-          <div className="bg-white rounded-[3rem] p-10 lg:p-16 border-4 border-fuchsia-100 shadow-xl flex flex-col lg:flex-row-reverse gap-12 items-center">
+          <div className="bg-fuchsia-50 rounded-[3rem] p-10 lg:p-16 border-4 border-fuchsia-100 shadow-xl flex flex-col lg:flex-row-reverse gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="w-16 h-16 bg-fuchsia-400 rounded-full flex items-center justify-center mb-6 shadow-md">
                 <Users className="w-8 h-8 text-white" />
@@ -114,11 +114,11 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80" alt="Inclusive play" className="rounded-[2rem] border-8 border-fuchsia-50 shadow-2xl object-cover aspect-[4/3] transform -rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./caresociety_sign.jpg" alt="Inclusive play" className="rounded-[2rem] border-8 border-fuchsia-50 shadow-2xl object-cover aspect-[4/3] transform -rotate-2 hover:rotate-0 transition-transform" />
             </div>
           </div>
 
-          <div className="bg-white rounded-[3rem] p-10 lg:p-16 border-4 border-sky-100 shadow-xl flex flex-col lg:flex-row gap-12 items-center">
+          <div className="bg-sky-50 rounded-[3rem] p-10 lg:p-16 border-4 border-sky-100 shadow-xl flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="w-16 h-16 bg-sky-500 rounded-full flex items-center justify-center mb-6 shadow-md">
                 <Shield className="w-8 h-8 text-white" />
@@ -140,7 +140,7 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="https://images.unsplash.com/photo-1584697964400-2af6a2f6204c?auto=format&fit=crop&q=80" alt="Safe environment" className="rounded-[2rem] border-8 border-sky-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./firesafety.jpg" alt="Safe environment" className="rounded-[2rem] border-8 border-sky-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
             </div>
           </div>
 

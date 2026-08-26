@@ -39,7 +39,7 @@ export default function Contact() {
           
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <div className="bg-sky-50 rounded-3xl p-8 border border-gray-100 shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
               
               <div className="space-y-6">
@@ -107,7 +107,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 shadow-xl shadow-gray-200/40">
+          <div className="bg-slate-50 rounded-3xl p-8 lg:p-10 border border-gray-100 shadow-xl shadow-gray-200/40">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
                 <MessageSquare className="w-6 h-6 text-blue-600" />

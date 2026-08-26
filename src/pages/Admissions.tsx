@@ -63,7 +63,7 @@ export default function Admissions() {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* Age Eligibility Calculator */}
-          <div className="bg-white rounded-3xl p-8 border-4 border-gray-100 shadow-xl shadow-primary-900/5 relative overflow-hidden">
+          <div className="bg-sky-50 rounded-3xl p-8 border-4 border-gray-100 shadow-xl shadow-primary-900/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <Calculator className="w-48 h-48" />
             </div>
@@ -155,7 +155,7 @@ export default function Admissions() {
             <h2 className="text-3xl font-bold text-gray-900">Fee Schedule (2027)</h2>
           </div>
 
-          <div className="bg-white rounded-3xl border-4 border-gray-100 shadow-xl shadow-gray-200/40 overflow-hidden">
+          <div className="bg-primary-50 rounded-3xl border-4 border-gray-100 shadow-xl shadow-gray-200/40 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -201,7 +201,7 @@ export default function Admissions() {
                 
                 <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
                   {/* BML */}
-                  <div className="bg-white p-6 rounded-2xl border-2 border-red-100 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+                  <div className="bg-red-50 p-6 rounded-2xl border-2 border-red-100 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div className="absolute -right-4 -top-4 w-24 h-24 bg-red-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
                     <div className="flex items-start justify-between mb-6 relative z-10">
                       <div className="w-16 h-16 bg-[#E31837] rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -221,7 +221,7 @@ export default function Admissions() {
                   </div>
 
                   {/* MIB */}
-                  <div className="bg-white p-6 rounded-2xl border-2 border-emerald-100 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+                  <div className="bg-emerald-50 p-6 rounded-2xl border-2 border-emerald-100 flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
                     <div className="flex items-start justify-between mb-6 relative z-10">
                       <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-md border border-gray-100 p-2">
@@ -250,7 +250,7 @@ export default function Admissions() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-6 border border-gray-200">
+                <div className="bg-slate-50 rounded-2xl p-6 border border-gray-200">
                   <h5 className="font-bold text-gray-900 mb-5 flex items-center gap-2">
                     <Building2 className="w-5 h-5 text-gray-400" />
                     Instructions

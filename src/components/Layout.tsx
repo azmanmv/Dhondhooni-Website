@@ -20,8 +20,10 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-gray-50">
       {/* Announcement Bar */}
-      <div className="bg-primary-700 text-white text-center py-2 px-4 text-sm font-medium">
-        Admissions Open 2026 / Hulhumalé Phase 2 Campus Opening January 2027
+      <div className="bg-primary-700 text-white py-2 px-4 text-sm font-medium overflow-hidden whitespace-nowrap">
+        <div className="animate-marquee inline-block">
+          Admissions for 2026 now CLOSED | Hulhumalé Phase 2 Campus Opening insha Allah January 2027 | JOB OPENINGS: Admin Assistants, Assistant Teachers and Support Staff
+        </div>
       </div>
 
       {/* Global Header */}

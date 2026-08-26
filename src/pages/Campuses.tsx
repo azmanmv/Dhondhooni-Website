@@ -15,7 +15,7 @@ export default function Campuses() {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {/* Malé Campus */}
-          <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col">
+          <div className="bg-slate-50 rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col">
             <div className="h-64 relative bg-gray-100">
               <img 
                 src="./bc_inner.jpg" 

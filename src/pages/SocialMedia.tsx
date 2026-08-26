@@ -107,10 +107,10 @@ export default function SocialMedia() {
                 </div>
               </div>
               
-              <div className="bg-white rounded-2xl p-6 border border-pink-100 mb-6 shadow-sm">
+              <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100 mb-6 shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-pink-500 to-purple-600 p-0.5">
-                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                    <div className="w-full h-full bg-slate-50 rounded-full flex items-center justify-center">
                       <Instagram className="w-5 h-5 text-pink-600" />
                     </div>
                   </div>
