@@ -8,6 +8,7 @@ import Campuses from './pages/Campuses';
 import SocialMedia from './pages/SocialMedia';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import Apply from './pages/Apply';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="social-media" element={<SocialMedia />} />
           <Route path="jobs" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="apply" element={<Apply />} />
         </Route>
       </Routes>
     </HashRouter>

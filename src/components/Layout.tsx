@@ -40,7 +40,7 @@ export default function Layout() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex space-x-2">
+            <nav className="hidden xl:flex items-center space-x-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -54,6 +54,15 @@ export default function Layout() {
                   {link.name}
                 </Link>
               ))}
+              <div className="pl-2 border-l-2 border-gray-100 h-6 mx-1"></div>
+              <Link
+                to="/apply"
+                className={`px-5 py-2 rounded-full text-sm font-black transition-all duration-200 border-2 border-transparent bg-[#633F83] text-white hover:bg-[#800080] shadow-md hover:shadow-lg ${
+                  location.pathname === '/apply' ? 'ring-2 ring-offset-2 ring-[#633F83]' : ''
+                }`}
+              >
+                Apply Now
+              </Link>
             </nav>
 
 
@@ -88,7 +97,16 @@ export default function Layout() {
                   {link.name}
                 </Link>
               ))}
-
+              <div className="border-t border-gray-100 my-2"></div>
+              <Link
+                to="/apply"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-full text-base font-black transition-all border-2 border-transparent bg-[#633F83] text-white hover:bg-[#800080] shadow-sm text-center ${
+                  location.pathname === '/apply' ? 'ring-2 ring-offset-2 ring-[#633F83]' : ''
+                }`}
+              >
+                Apply Now
+              </Link>
             </div>
           </div>
         )}
