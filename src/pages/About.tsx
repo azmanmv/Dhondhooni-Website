@@ -88,7 +88,7 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="./cur1.jpg" alt="Learning" className="rounded-[2rem] border-8 border-primary-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./cur1.jpg" alt="Learning" className="rounded-[2rem] border-8 border-primary-50 shadow-2xl object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
 
@@ -114,7 +114,7 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="./caresociety_sign.jpg" alt="Inclusive play" className="rounded-[2rem] border-8 border-fuchsia-50 shadow-2xl object-cover aspect-[4/3] transform -rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./caresociety_sign.jpg" alt="Inclusive play" className="rounded-[2rem] border-8 border-fuchsia-50 shadow-2xl object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
 
@@ -140,7 +140,7 @@ export default function About() {
               </ul>
             </div>
             <div className="lg:w-1/2">
-              <img src="./firesafety.jpg" alt="Safe environment" className="rounded-[2rem] border-8 border-sky-50 shadow-2xl object-cover aspect-[4/3] transform rotate-2 hover:rotate-0 transition-transform" />
+              <img src="./firesafety.jpg" alt="Safe environment" className="rounded-[2rem] border-8 border-sky-50 shadow-2xl object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
 

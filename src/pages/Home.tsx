@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-800/90 to-primary-600/80"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36 flex flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-amber-400 text-primary-900 text-sm font-bold tracking-widest mb-6 shadow-md transform -rotate-2 hover:rotate-0 transition-transform">
+          <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-amber-400 text-primary-900 text-sm font-bold tracking-widest mb-6 shadow-md transform hover:scale-105 transition-transform duration-300">
             <Sparkles className="w-4 h-4" /> DISCOVER THE JOY OF LEARNING
           </span>
           <h1 className="text-5xl md:text-6xl lg:text-8xl font-black tracking-tight mb-6 max-w-5xl text-white drop-shadow-sm leading-tight">
@@ -106,13 +106,12 @@ export default function Home() {
                 </Link>
               </div>
               <div className="lg:w-1/2 w-full">
-                <div className="aspect-[4/3] bg-primary-800 rounded-[2rem] border-8 border-primary-800 overflow-hidden shadow-2xl relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <div className="aspect-[4/3] rounded-[2rem] border-8 border-white overflow-hidden shadow-2xl relative transform hover:scale-105 transition-transform duration-500">
                    <img 
                     src="./newadventure1.jpg" 
                     alt="School Campus rendering" 
-                    className="w-full h-full object-cover opacity-90"
+                    className="w-full h-full object-cover"
                    />
-                   <div className="absolute inset-0 bg-primary-900/10"></div>
                 </div>
               </div>
             </div>

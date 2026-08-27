@@ -47,10 +47,15 @@ export default function Careers() {
           </h2>
           
           <div className="grid gap-6">
-            {activeJobs.map((job) => (
+            {activeJobs.map((job, idx) => {
+              const bgTints = ['bg-purple-50', 'bg-blue-50', 'bg-emerald-50', 'bg-amber-50'];
+              const borderTints = ['border-purple-200', 'border-blue-200', 'border-emerald-200', 'border-amber-200'];
+              const hoverBorderTints = ['hover:border-purple-300', 'hover:border-blue-300', 'hover:border-emerald-300', 'hover:border-amber-300'];
+              
+              return (
               <div 
                 key={job.id}
-                className="rounded-2xl p-6 md:p-8 bg-slate-50 border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6"
+                className={`rounded-2xl p-6 md:p-8 border transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-md ${bgTints[idx % bgTints.length]} ${borderTints[idx % borderTints.length]} ${hoverBorderTints[idx % hoverBorderTints.length]}`}
               >
                 <div className="flex-1">
                   <div className="flex justify-between items-start mb-3">
@@ -75,7 +80,8 @@ export default function Careers() {
                   </Link>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
 

@@ -20,9 +20,15 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-800 bg-gray-50">
       {/* Announcement Bar */}
-      <div className="bg-primary-700 text-white py-2 px-4 text-sm font-medium overflow-hidden whitespace-nowrap">
-        <div className="animate-marquee inline-block">
-          Admissions for 2026 now CLOSED | Hulhumalé Phase 2 Campus Opening insha Allah January 2027 | JOB OPENINGS: Admin Assistants, Assistant Teachers and Support Staff
+      <div className="bg-primary-700 text-white py-2 px-4 text-sm font-medium overflow-hidden whitespace-nowrap flex items-center">
+        <div className="animate-marquee inline-flex items-center gap-3">
+          <span>Admissions for 2026 now CLOSED</span>
+          <span className="opacity-50 mx-6">|</span>
+          <span className="bg-red-500 text-white px-3 py-0.5 rounded-full font-bold shadow-sm">ADMISSION FOR 2027 NOW OPEN FOR BAGEECHA CAMPUS (MALE')</span>
+          <span className="opacity-50 mx-6">|</span>
+          <span>Hulhumalé Phase 2 Campus Opening insha Allah January 2027</span>
+          <span className="opacity-50 mx-6">|</span>
+          <span>JOB OPENINGS: Admin Assistants, Assistant Teachers and Support Staff</span>
         </div>
       </div>
 
