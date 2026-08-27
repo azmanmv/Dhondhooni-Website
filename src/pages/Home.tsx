@@ -1,7 +1,64 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Heart, Users, CheckCircle2, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, BookOpen, Heart, Users, CheckCircle2, Sparkles, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef, MouseEvent, useState, useEffect } from 'react';
+
+const bgImages = [
+  '/back.jpg',
+  '/back1.jpg',
+  '/back2.jpg',
+  '/back3.jpg',
+  '/back4.jpg',
+  '/back5.jpg'
+];
 
 export default function Home() {
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const lastTrailTime = useRef(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % bgImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextImage = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % bgImages.length);
+  };
+
+  const prevImage = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + bgImages.length) % bgImages.length);
+  };
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const now = Date.now();
+    if (now - lastTrailTime.current < 40) return;
+    lastTrailTime.current = now;
+
+    if (!bannerRef.current) return;
+
+    const rect = bannerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const star = document.createElement('div');
+    star.className = 'absolute pointer-events-none text-amber-300 drop-shadow-[0_0_12px_rgba(252,211,77,1)] z-0';
+    star.innerHTML = `<svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+    star.style.left = `${x - 32}px`;
+    star.style.top = `${y - 32}px`;
+    star.style.animation = 'star-fade 1s forwards ease-out';
+    
+    bannerRef.current.appendChild(star);
+    setTimeout(() => {
+      if (star.parentNode) {
+        star.parentNode.removeChild(star);
+      }
+    }, 1000);
+  };
+
   return (
     <div className="animate-in fade-in duration-700 relative overflow-hidden">
       {/* Decorative Background Blobs */}
@@ -10,11 +67,51 @@ export default function Home() {
       <div className="absolute -bottom-8 left-40 w-72 h-72 bg-sky-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
 
       {/* Hero Banner */}
-      <section className="relative bg-primary-800 text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-xl">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-800/90 to-primary-600/80"></div>
+      <section 
+        ref={bannerRef}
+        onMouseMove={handleMouseMove}
+        className="relative bg-primary-800 text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-xl group"
+      >
+        {bgImages.map((src, idx) => (
+          <div 
+            key={src}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} 
+            style={{ 
+              backgroundImage: `linear-gradient(to bottom right, rgba(76, 29, 149, 0.95), rgba(91, 33, 182, 0.9), rgba(124, 58, 237, 0.8)), url('${src}')`,
+              backgroundBlendMode: 'multiply'
+            }}
+          ></div>
+        ))}
+
+        {/* Slideshow Controls */}
+        <button 
+          onClick={prevImage}
+          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="w-8 h-8" />
+        </button>
+        <button 
+          onClick={nextImage}
+          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-8 h-8" />
+        </button>
+
+        {/* Pagination Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+          {bgImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-amber-400 scale-125 shadow-[0_0_8px_rgba(252,211,77,0.8)]' : 'bg-white/40 hover:bg-white/70'}`}
+              aria-label={`Go to image ${idx + 1}`}
+            />
+          ))}
+        </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36 flex flex-col items-center text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36 flex flex-col items-center text-center">
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-amber-400 text-primary-900 text-sm font-bold tracking-widest mb-6 shadow-md transform hover:scale-105 transition-transform duration-300">
             <Sparkles className="w-4 h-4" /> DISCOVER THE JOY OF LEARNING
           </span>
