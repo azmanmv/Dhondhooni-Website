@@ -35,7 +35,7 @@ export default function Layout() {
       {/* Global Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center py-3 min-h-[5rem] gap-4">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center gap-3">
@@ -48,35 +48,37 @@ export default function Layout() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center space-x-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2 rounded-full text-sm font-black transition-all duration-200 border-2 border-transparent ${
-                    location.pathname === link.path
-                      ? link.active + ' border-black/10'
-                      : link.default
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="pl-2 border-l-2 border-gray-100 h-6 mx-1"></div>
+            <nav className="hidden md:flex items-center gap-2 xl:gap-4">
+              <div className="grid grid-cols-4 xl:flex gap-x-1 gap-y-1.5 xl:gap-x-2 xl:gap-y-0">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`px-2 py-1.5 xl:px-4 xl:py-2 rounded-full text-[11px] xl:text-sm font-black transition-all duration-200 border-2 border-transparent text-center flex items-center justify-center whitespace-nowrap ${
+                      location.pathname === link.path
+                        ? link.active + ' border-black/10'
+                        : link.default
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="w-px h-10 xl:h-6 bg-gray-200 mx-1 xl:mx-2"></div>
               <Link
                 to="/apply"
-                className={`px-5 py-2 rounded-full text-sm font-black transition-all duration-200 border-2 border-transparent bg-[#633F83] text-white hover:bg-[#800080] shadow-md hover:shadow-lg ${
+                className={`px-4 py-3 xl:px-5 xl:py-2 rounded-full text-[11px] xl:text-sm font-black transition-all duration-200 border-2 border-transparent bg-[#633F83] text-white hover:bg-[#800080] shadow-md hover:shadow-lg flex items-center justify-center text-center leading-tight ${
                   location.pathname === '/apply' ? 'ring-2 ring-offset-2 ring-[#633F83]' : ''
                 }`}
               >
-                Apply Now
+                Apply<br className="hidden md:block xl:hidden" /> Now
               </Link>
             </nav>
 
 
 
             {/* Mobile menu button */}
-            <div className="flex items-center xl:hidden">
+            <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary-700 hover:bg-gray-100 focus:outline-none"
@@ -89,7 +91,7 @@ export default function Layout() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-gray-100">
+          <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-4 pt-4 pb-3 space-y-2 sm:px-6">
               {navLinks.map((link) => (
                 <Link
@@ -128,7 +130,7 @@ export default function Layout() {
       {/* Quick Contact Floating Actions */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
         <a
-          href="viber://chat?number=+9607919960"
+          href="viber://chat?number=+9607960669"
           className="bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-transform hover:scale-110 flex items-center justify-center"
           aria-label="Viber"
         >

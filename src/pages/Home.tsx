@@ -23,12 +23,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const nextImage = (e?: React.MouseEvent) => {
+  const nextImage = (e?: MouseEvent) => {
     if (e) e.stopPropagation();
     setCurrentImageIndex((prev) => (prev + 1) % bgImages.length);
   };
 
-  const prevImage = (e?: React.MouseEvent) => {
+  const prevImage = (e?: MouseEvent) => {
     if (e) e.stopPropagation();
     setCurrentImageIndex((prev) => (prev - 1 + bgImages.length) % bgImages.length);
   };
@@ -75,12 +75,13 @@ export default function Home() {
         {bgImages.map((src, idx) => (
           <div 
             key={src}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} 
-            style={{ 
-              backgroundImage: `linear-gradient(to bottom right, rgba(76, 29, 149, 0.95), rgba(91, 33, 182, 0.9), rgba(124, 58, 237, 0.8)), url('${src}')`,
-              backgroundBlendMode: 'multiply'
-            }}
-          ></div>
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} 
+          >
+            <div 
+              className={`absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] ease-out ${idx === currentImageIndex ? 'scale-110' : 'scale-100'}`}
+              style={{ backgroundImage: `url('${src}')` }}
+            ></div>
+          </div>
         ))}
 
         {/* Slideshow Controls */}
@@ -115,10 +116,10 @@ export default function Home() {
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-amber-400 text-primary-900 text-sm font-bold tracking-widest mb-6 shadow-md transform hover:scale-105 transition-transform duration-300">
             <Sparkles className="w-4 h-4" /> DISCOVER THE JOY OF LEARNING
           </span>
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-black tracking-tight mb-6 max-w-5xl text-white drop-shadow-sm leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-black tracking-tight mb-6 max-w-5xl text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] leading-tight">
             Where Little Learners <span className="text-amber-300 inline-block transform rotate-1 hover:scale-105 transition-transform">Blossom</span>
           </h1>
-          <p className="text-xl md:text-2xl text-primary-50 max-w-2xl mb-10 font-semibold leading-relaxed">
+          <p className="text-xl md:text-2xl text-white max-w-2xl mb-10 font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             With over 13 years of expertise, we provide a nurturing, stimulating, and safe environment rooted in authentic Islamic values and modern pedagogical standards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

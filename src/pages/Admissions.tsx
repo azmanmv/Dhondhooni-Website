@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Calculator, CreditCard, ArrowRight, Building2 } from 'lucide-react';
+import { Calculator, Users, Heart, CreditCard, ArrowRight, Building2, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Admissions() {
   const [dob, setDob] = useState('');
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
   const [calcResult, setCalcResult] = useState<{ text: string, color: string, program: string | null } | null>(null);
 
   const calculateEligibility = (e: React.FormEvent) => {
@@ -63,20 +64,24 @@ export default function Admissions() {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* Age Eligibility Calculator */}
-          <div className="bg-sky-50 rounded-3xl p-8 border-4 border-gray-100 shadow-xl shadow-primary-900/5 relative overflow-hidden">
+          <div className="bg-yellow-50 rounded-3xl p-8 border-4 border-yellow-100 shadow-xl shadow-yellow-900/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <Calculator className="w-48 h-48" />
             </div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center">
-                  <Calculator className="w-6 h-6 text-primary-600" />
+                <div className="w-12 h-12 rounded-xl bg-yellow-200 flex items-center justify-center">
+                  <Calculator className="w-6 h-6 text-yellow-700" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900">Age Eligibility Calculator</h2>
               </div>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-6">
                 Not sure which program your child is eligible for in 2027? Enter their date of birth below to find out.
               </p>
+              
+              <div className="mb-8 p-4 rounded-xl bg-yellow-100/50 text-yellow-800 text-sm font-medium border border-yellow-200">
+                Please note: The age criteria is enforced by the Ministry of Education.
+              </div>
 
               <form onSubmit={calculateEligibility} className="space-y-6">
                 <div>
@@ -101,13 +106,14 @@ export default function Admissions() {
               </form>
 
               {calcResult && (
-                <div className="mt-8 p-6 rounded-2xl bg-primary-50 border-2 border-primary-100 animate-in slide-in-from-bottom-4">
-                  <p className={`font-semibold ${calcResult.color}`}>
-                    {calcResult.text}
-                  </p>
-                  {calcResult.program && (
-                    <p className="text-2xl font-black text-primary-900 mt-2">
-                      {calcResult.program}
+                <div className="mt-8 p-6 rounded-2xl bg-yellow-100/50 border-2 border-yellow-200 animate-in slide-in-from-bottom-4">
+                  {calcResult.program ? (
+                    <p className="font-semibold text-gray-800 text-lg leading-relaxed">
+                      Your child is eligible for <span className="font-black text-yellow-900">{calcResult.program}</span> in the academic year 2027.
+                    </p>
+                  ) : (
+                    <p className={`font-semibold ${calcResult.color}`}>
+                      {calcResult.text}
                     </p>
                   )}
                 </div>
@@ -152,7 +158,13 @@ export default function Admissions() {
             <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
               <CreditCard className="w-6 h-6 text-blue-600" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900">Fee Schedule (2027)</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Fee Schedule and School Timings</h2>
+          </div>
+
+          <div className="mb-8 max-w-lg mx-auto bg-amber-50 rounded-2xl border-2 border-amber-100 p-6 flex flex-col items-center justify-center text-center shadow-md">
+            <span className="font-bold text-amber-900 uppercase tracking-widest text-sm mb-1">One-Time Admission Fee</span>
+            <span className="font-black text-amber-700 text-3xl mb-1">MVR 2,000</span>
+            <span className="text-amber-800 text-xs font-semibold bg-amber-200/50 px-3 py-1 rounded-full">(Non-Refundable)</span>
           </div>
 
           <div className="bg-primary-50 rounded-3xl border-4 border-gray-100 shadow-xl shadow-gray-200/40 overflow-hidden">
@@ -161,41 +173,63 @@ export default function Admissions() {
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-100">
                     <th className="py-5 px-6 font-bold text-gray-900 uppercase text-sm tracking-wider">Program</th>
-                    <th className="py-5 px-6 font-bold text-gray-900 uppercase text-sm tracking-wider">Admission Fee (One-time)</th>
+                    <th className="py-5 px-6 font-bold text-gray-900 uppercase text-sm tracking-wider">School Timings</th>
                     <th className="py-5 px-6 font-bold text-gray-900 uppercase text-sm tracking-wider">Monthly Tuition</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 px-6 font-bold text-gray-900">Play School (PS)</td>
-                    <td className="py-5 px-6 text-gray-600">MVR 2,000</td>
+                    <td className="py-5 px-6 text-gray-600 font-medium">4:15 PM - 5:45 PM</td>
                     <td className="py-5 px-6 text-gray-900 font-semibold">MVR 2,000</td>
                   </tr>
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 px-6 font-bold text-gray-900">Baby Nursery (BN)</td>
-                    <td className="py-5 px-6 text-gray-600">MVR 2,000</td>
+                    <td className="py-5 px-6 text-gray-600 font-medium">4:10 PM - 6:00 PM</td>
                     <td className="py-5 px-6 text-gray-900 font-semibold">MVR 2,500</td>
                   </tr>
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 px-6 font-bold text-gray-900">Nursery (N)</td>
-                    <td className="py-5 px-6 text-gray-600">MVR 2,000</td>
+                    <td className="py-5 px-6 text-gray-600 font-medium">10:30 AM - 12:30 PM</td>
                     <td className="py-5 px-6 text-gray-900 font-semibold">MVR 2,500</td>
                   </tr>
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 px-6 font-bold text-gray-900">Lower Kindergarten (LKG)</td>
-                    <td className="py-5 px-6 text-gray-600">MVR 2,000</td>
+                    <td className="py-5 px-6 text-gray-600 font-medium">12:40 PM - 3:40 PM</td>
                     <td className="py-5 px-6 text-gray-900 font-semibold">MVR 2,500</td>
                   </tr>
                   <tr className="hover:bg-gray-50 transition-colors">
                     <td className="py-5 px-6 font-bold text-gray-900">Upper Kindergarten (UKG)</td>
-                    <td className="py-5 px-6 text-gray-600">MVR 2,000</td>
+                    <td className="py-5 px-6 text-gray-600 font-medium">6:55 AM - 10:00 AM</td>
                     <td className="py-5 px-6 text-gray-900 font-semibold">MVR 2,500</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-indigo-50 border-2 border-indigo-100 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center shrink-0">
+                <Users className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold text-indigo-900 text-lg mb-1">Sibling Discount</h4>
+                <p className="text-indigo-700 font-medium">A <strong className="font-black">10% discount</strong> on the monthly fee is given for siblings. <span className="text-sm opacity-80 block mt-1">To be eligible for this discount, monthly payments must be made on time.</span></p>
+              </div>
+            </div>
+            <div className="bg-teal-50 border-2 border-teal-100 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center shrink-0">
+                <Heart className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold text-teal-900 text-lg mb-1">Staff Discount</h4>
+                <p className="text-teal-700 font-medium">A <strong className="font-black">50% discount</strong> on the monthly fee is given for staff. <span className="text-sm opacity-80 block mt-1">To be eligible for this discount, monthly payments must be made on time.</span></p>
+              </div>
+            </div>
+          </div>
+
             
-            <div className="bg-gray-50 p-6 md:p-8 border-t border-gray-100">
+            <div className="bg-gray-50 p-6 md:p-8 border-t border-gray-100 mt-12 rounded-3xl">
               <h4 className="font-bold text-gray-900 mb-6 text-xl">Payment Information</h4>
               <div className="grid lg:grid-cols-3 gap-8">
                 
@@ -285,6 +319,57 @@ export default function Admissions() {
               </div>
             </div>
           </div>
+          
+          {/* General Policy Section */}
+          <div className="mt-12 bg-white rounded-3xl border-4 border-gray-100 shadow-xl overflow-hidden group">
+            <button
+              onClick={() => setIsPolicyOpen(!isPolicyOpen)}
+              className="w-full flex items-center justify-between p-6 md:p-8 bg-gray-50 hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="text-2xl font-bold text-gray-900">Summarised General Policy</h3>
+              <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-primary-600 group-hover:scale-105 transition-transform">
+                {isPolicyOpen ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
+              </div>
+            </button>
+            
+            {isPolicyOpen && (
+              <div className="p-6 md:p-8 border-t border-gray-100 space-y-12 animate-in slide-in-from-top-4 duration-300 fade-in">
+                <div>
+                  <h4 className="text-xl font-bold text-primary-900 mb-6 border-b border-primary-100 pb-4">Fee Policy</h4>
+                  <ul className="space-y-4 text-gray-600 list-disc list-outside ml-6 font-medium marker:text-primary-400">
+                    <li>Admission fee is MVR 2,000/- (non-refundable)</li>
+                    <li>School Fee is MVR 2,500.00 per month for 12 months (MVR 30,000.00 per Annum).</li>
+                    <li>A 10% discount on monthly fee is given for siblings. To be eligible for this discount, monthly payments must be made on time.</li>
+                    <li>A 50% discount on monthly fee is given for staff. To be eligible for this discount, monthly payments must be made on time.</li>
+                    <li>School fees must be paid before 10th of each month.</li>
+                    <li>December fee will be due on or before November 10th</li>
+                    <li>UKG students (who graduate) are also required to pay for the month of December (It is considered part of the academic year)</li>
+                    <li>If payments are not received by 20th of the month and the parent has not given in writing the reason for delay and accepted by management, the student’s placement maybe cancelled and the school has the right to expel the student without further notice.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-bold text-primary-900 mb-6 border-b border-primary-100 pb-4">Important Notes</h4>
+                  <ul className="space-y-4 text-gray-600 list-disc list-outside ml-6 font-medium marker:text-primary-400">
+                    <li>Student should be given 1 dose of BCG vaccine and 3 doses of DPT vaccine.</li>
+                    <li>Copy of parent/guardian’s ID card and copies of student’s ID Card or Birth Certificate and immunization card should be submitted with the application form.</li>
+                    <li>Student should not be a student of any other preschool.</li>
+                    <li>Leaving certificate from the previous school must be submitted if applicable.</li>
+                    <li>Student cannot be in two schools simultaneously.</li>
+                    <li>Submission of this form does not guarantee placement.</li>
+                    <li>Registration is only completed when the form is verified, admission fee is paid and you are informed of admission being completed.</li>
+                    <li>Study materials, books and stationery will be provided by the school without any charges.</li>
+                    <li>Uniforms (Official and Activity) will not be provided by the school.</li>
+                    <li>School will provide information about bag, interval and other items that student may require.</li>
+                    <li>Pictures of the student may be used for promotional purposes and may appear on our Facebook, twitter, YouTube or other social media.</li>
+                    <li>Any change in address and contact information should be notified to office immediately.</li>
+                    <li>School notice board and website will have the school policies.</li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+
         </div>
 
       </div>
