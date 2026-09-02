@@ -38,7 +38,7 @@ export default function Layout() {
           <div className="flex justify-between items-center py-3 min-h-[5rem] gap-4">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className="flex items-center gap-3">
+              <Link to="/" className="flex items-center gap-3" aria-label="Go to homepage">
                 <img 
                   src="./logohead2%20color.png" 
                   alt="Dhondhooni Little Learners Preschool" 
@@ -81,7 +81,9 @@ export default function Layout() {
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary-700 hover:bg-gray-100 focus:outline-none"
+                className="inline-flex items-center justify-center p-2 rounded-md text-[#633F83] hover:text-[#800080] hover:bg-[#633F83]/10 focus:outline-none"
+                aria-expanded={isMobileMenuOpen}
+                aria-label={isMobileMenuOpen ? "Close main menu" : "Open main menu"}
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -148,10 +150,10 @@ export default function Layout() {
                 Nurturing young minds through sensory exploration, structured inquiry, and holistic development.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.facebook.com/dhondhoonipreschool" target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors">
+                <a href="https://www.facebook.com/dhondhoonipreschool" target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors" aria-label="Visit our Facebook page">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/dhondhoonipreschool" target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/dhondhoonipreschool" target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors" aria-label="Visit our Instagram page">
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
